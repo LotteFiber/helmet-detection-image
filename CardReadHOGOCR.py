@@ -54,8 +54,8 @@ def read_card_detect(uuid):
     createfolder(path_final_img)
 
     # count file in folder for *
-    img_folder_path = './card_crop'
-    images_path = glob.glob("card_crop/"+uuid+".jpg")
+    img_folder_path = '../detection-api/Images'
+    images_path = glob.glob("../detection-api/Images/"+uuid+".jpg")
     print(images_path)
     count = len(os.listdir(img_folder_path))
 
@@ -123,10 +123,10 @@ def read_card_detect(uuid):
             text_name = reader.readtext(crop_name)
             text_student_id = reader.readtext(crop_student_id)
             text_faculty = reader.readtext(crop_faculty)
-            cv2.imshow('crop warp image', img_d)
-            cv2.imshow('crop name', crop_name)
-            cv2.imshow('crop student_id', crop_student_id)
-            cv2.imshow('crop faculty', crop_faculty)
+            # cv2.imshow('crop warp image', img_d)
+            # cv2.imshow('crop name', crop_name)
+            # cv2.imshow('crop student_id', crop_student_id)
+            # cv2.imshow('crop faculty', crop_faculty)
 
             name = text_name[0][1].strip().split(" ")
             first_name = name[0]
@@ -161,7 +161,7 @@ def read_card_detect(uuid):
             print("false Detected: ", "/")
             cv2.destroyAllWindows()
 
-    delete_file()
+    # delete_file()
     return finaldata
 
 

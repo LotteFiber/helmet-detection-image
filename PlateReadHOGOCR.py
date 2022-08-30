@@ -187,13 +187,13 @@ def read_plate_detect(uuid):
     # prepare folder
     now = datetime.datetime.now()
     date_time = str(now.year)+"_"+str(now.month)+"_"+str(now.day)+"_"+str(now.hour)+"_"+str(now.minute)
-    path_final_img = './data/ImageDate'+date_time
-    path_final_img_db = 'data/ImageDate'+date_time
+    path_final_img = './data/ImagePlateDate'+date_time
+    path_final_img_db = 'data/ImagePlateDate'+date_time
     createfolder(path_final_img)
 
     # count file in folder for *
-    img_folder_path = './person_crop'
-    images_path = glob.glob("person_crop/" + uuid + ".JPG")
+    img_folder_path = '../detection-api/Images'
+    images_path = glob.glob("../detection-api/Images/" + uuid + ".JPG")
     print(images_path)
     # count = len(os.listdir(img_folder_path))
     count = 1
