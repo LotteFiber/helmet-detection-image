@@ -157,12 +157,11 @@ def read_card_detect(uuid):
                 exit()
 
             cv2.destroyAllWindows()
+            return finaldata
         except:
             print("false Detected: ", "/")
             cv2.destroyAllWindows()
-
-    # delete_file()
-    return finaldata
+            return False
 
 
 def startProgramCardDetection(uuid):
